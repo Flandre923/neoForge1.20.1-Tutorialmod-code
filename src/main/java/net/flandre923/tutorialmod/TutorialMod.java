@@ -2,13 +2,18 @@ package net.flandre923.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.flandre923.tutorialmod.block.ModBlocks;
+import net.flandre923.tutorialmod.block.entity.ModBlockEntities;
 import net.flandre923.tutorialmod.fluid.ModFluidTypes;
 import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.ModCreativeModeTab;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.painting.ModPaintings;
+import net.flandre923.tutorialmod.screen.GemInfusingStationMenu;
+import net.flandre923.tutorialmod.screen.GemInfusingStationScreen;
+import net.flandre923.tutorialmod.screen.ModMenuTypes;
 import net.flandre923.tutorialmod.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -46,6 +51,10 @@ public class TutorialMod
         // fluid
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+        // blockentity
+        ModBlockEntities.register(modEventBus);
+        // screen
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -70,6 +79,8 @@ public class TutorialMod
         {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(),RenderType.translucent());
+            // scrren
+            MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
         }
     }
 }

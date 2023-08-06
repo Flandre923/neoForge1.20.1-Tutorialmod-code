@@ -9,6 +9,7 @@ import net.flandre923.tutorialmod.item.ModCreativeModeTab;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.painting.ModPaintings;
+import net.flandre923.tutorialmod.recipe.ModRecipes;
 import net.flandre923.tutorialmod.screen.GemInfusingStationMenu;
 import net.flandre923.tutorialmod.screen.GemInfusingStationScreen;
 import net.flandre923.tutorialmod.screen.ModMenuTypes;
@@ -55,7 +56,8 @@ public class TutorialMod
         ModBlockEntities.register(modEventBus);
         // screen
         ModMenuTypes.register(modEventBus);
-
+        //recipes
+        ModRecipes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }

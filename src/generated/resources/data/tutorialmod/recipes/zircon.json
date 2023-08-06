@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "tutorial",
+  "group": "tutorialmod",
   "ingredients": [
     {
       "item": "tutorialmod:zircon_block"

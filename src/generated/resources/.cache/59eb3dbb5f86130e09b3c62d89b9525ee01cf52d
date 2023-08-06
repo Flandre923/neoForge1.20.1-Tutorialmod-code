@@ -1,0 +1,9 @@
+// 1.20.1	2023-08-04T20:29:31.7368701	Loot Tables
+4f6043b847ad8fe32a1057eb03492a98ebe449de data/tutorialmod/loot_tables/blocks/blueberry_crop.json
+e11a608bd48371b120ac7a96a057b71c73a1fbba data/tutorialmod/loot_tables/blocks/deepslate_zircon_ore.json
+8ba138b2370bb966443a48fab506830670de3b22 data/tutorialmod/loot_tables/blocks/endstone_zircon_ore.json
+9448d22b55a8cf728bca11ad7c6550965a18b149 data/tutorialmod/loot_tables/blocks/jumpy_block.json
+4606f010d63699b0c3cd1eff0fb9f207833d6ea0 data/tutorialmod/loot_tables/blocks/netherrack_zircon_ore.json
+f33651d88245b8535992ab29772e769b5659d7c4 data/tutorialmod/loot_tables/blocks/zircon_block.json
+29400ff45c25dbd769348925d5b8ee7785d393ac data/tutorialmod/loot_tables/blocks/zircon_lamp.json
+51c3d9a0b1f6fd1d0076b49bd9c87dd7aa53c29b data/tutorialmod/loot_tables/blocks/zircon_ore.json

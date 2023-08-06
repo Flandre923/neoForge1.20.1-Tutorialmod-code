@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "tutorialmod",
+  "ingredient": {
+    "item": "tutorialmod:raw_zircon"
+  },
+  "result": "tutorialmod:zircon"
+}

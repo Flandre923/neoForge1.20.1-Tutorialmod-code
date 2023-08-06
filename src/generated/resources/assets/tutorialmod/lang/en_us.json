@@ -1,0 +1,23 @@
+{
+  "block.tutorialmod.deepslate_zircon_ore": "Deepslate Zircon Ore",
+  "block.tutorialmod.endstone_zircon_ore": "End Zircon Ore",
+  "block.tutorialmod.gen_infusing_station": "Gem Infusing Station",
+  "block.tutorialmod.jumpy_block": "Jumpy block",
+  "block.tutorialmod.netherrack_zircon_ore": "Nether Zircon Ore",
+  "block.tutorialmod.zircon_block": "Zircon Block",
+  "block.tutorialmod.zircon_lamp": "Zircon Lamp",
+  "block.tutorialmod.zircon_ore": "Zircon Ore",
+  "creativetab.tutorial_tab": "TutorialMod Tab",
+  "entity.minecraft.villager.tutorialmod.jumpy_master": "Jumpy Master",
+  "item.tutorialmod.blueberry": "Blueberry",
+  "item.tutorialmod.blueberry_seeds": "Blueberry Seed",
+  "item.tutorialmod.eight_ball": "Eight Ball",
+  "item.tutorialmod.raw_zircon": "RawSapphire",
+  "item.tutorialmod.soap_water_bucket": "Soap Water Bucket",
+  "item.tutorialmod.tutorial_sword": "Tutorial Mod Sword",
+  "item.tutorialmod.zircon": "Sapphire",
+  "key.category.tutorialmod.tutorial": "Tutorial Category",
+  "key.tutorialmod.drink_water": "Drinking Water Key",
+  "message.tutorialmod.drink_water": "Drinking Water",
+  "message.tutorialmod.no_water": "No water nearby"
+}

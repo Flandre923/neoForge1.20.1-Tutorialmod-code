@@ -1,0 +1,9 @@
+// 1.20.1	2023-08-04T14:40:02.2965486	Recipes
+032c597ff8f001f09a1d87cf31cf6311415ef953 data/minecraft/advancements/recipes/misc/zircon_from_blasting_raw_zircon.json
+4c13da55c4d95490dc88acedd38a2e6b2489c507 data/minecraft/advancements/recipes/misc/zircon_from_smelting_raw_zircon.json
+545316c2f274225443eab91135e6106ceccce8a5 data/minecraft/recipes/zircon_from_blasting_raw_zircon.json
+7f84c87708896c3027ff063b46b26905672958d9 data/minecraft/recipes/zircon_from_smelting_raw_zircon.json
+2b0716a65dadb57ae4ae80d67dddf4a9cfe327e5 data/tutorialmod/advancements/recipes/misc/zircon.json
+3ddb0b08d9c83db6cb64329314da5f5bf99823c8 data/tutorialmod/advancements/recipes/misc/zircon_block.json
+be429e5a6e8c7a11d560f6490ffeb22946b90c58 data/tutorialmod/recipes/zircon.json
+dff571221e346daf9d279d87ab5e6c3bdd174cbb data/tutorialmod/recipes/zircon_block.json

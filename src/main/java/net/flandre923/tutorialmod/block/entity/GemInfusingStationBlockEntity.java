@@ -6,6 +6,7 @@ import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.networking.packet.EnergySyncS2CPacket;
 import net.flandre923.tutorialmod.networking.packet.FluidSyncS2CPacket;
+import net.flandre923.tutorialmod.networking.packet.ItemStackSyncS2CPacket;
 import net.flandre923.tutorialmod.recipe.GemInfusingStationRecipe;
 import net.flandre923.tutorialmod.screen.GemInfusingStationMenu;
 import net.flandre923.tutorialmod.util.ModEnergyStorage;
@@ -47,6 +48,9 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if(!level.isClientSide){
+                ModMessages.sendToClients(new ItemStackSyncS2CPacket(this, worldPosition));
+            }
         }
 
         @Override
@@ -91,6 +95,24 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
     public FluidStack getFluidStack() {
         return this.FLUID_TANK.getFluid();
     }
+    public ItemStack getRenderStack() {
+        ItemStack stack;
+
+        if(!itemHandler.getStackInSlot(2).isEmpty()) {
+            stack = itemHandler.getStackInSlot(2);
+        } else {
+            stack = itemHandler.getStackInSlot(1);
+        }
+
+        return stack;
+    }
+
+    public void setHandler(ItemStackHandler itemStackHandler) {
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
+        }
+    }
+
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     // itemhandler,extract,insert

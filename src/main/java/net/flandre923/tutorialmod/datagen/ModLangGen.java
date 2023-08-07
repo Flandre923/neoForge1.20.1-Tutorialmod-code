@@ -2,6 +2,7 @@ package net.flandre923.tutorialmod.datagen;
 
 import net.flandre923.tutorialmod.TutorialMod;
 import net.flandre923.tutorialmod.block.ModBlocks;
+import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.ModCreativeModeTab;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.networking.packet.DrinkWaterC2SPacket;

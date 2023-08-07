@@ -1,11 +1,14 @@
 package net.flandre923.tutorialmod.event;
 
 import net.flandre923.tutorialmod.TutorialMod;
+import net.flandre923.tutorialmod.block.entity.ModBlockEntities;
+import net.flandre923.tutorialmod.block.entity.renderer.GemInfusingStationBlockEntityRenderer;
 import net.flandre923.tutorialmod.client.ThirstHudOverlay;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.networking.packet.DrinkWaterC2SPacket;
 import net.flandre923.tutorialmod.util.KeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -35,6 +38,12 @@ public class ClientEvents {
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
             event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.GEM_INFUSING_STATION.get(),
+                    GemInfusingStationBlockEntityRenderer::new);
         }
     }
 }

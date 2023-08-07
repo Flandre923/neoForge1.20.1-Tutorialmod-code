@@ -10,7 +10,6 @@ import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.painting.ModPaintings;
 import net.flandre923.tutorialmod.recipe.ModRecipes;
-import net.flandre923.tutorialmod.screen.GemInfusingStationMenu;
 import net.flandre923.tutorialmod.screen.GemInfusingStationScreen;
 import net.flandre923.tutorialmod.screen.ModMenuTypes;
 import net.flandre923.tutorialmod.villager.ModVillagers;

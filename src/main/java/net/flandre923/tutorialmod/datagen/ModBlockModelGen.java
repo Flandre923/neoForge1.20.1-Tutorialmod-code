@@ -29,6 +29,7 @@ public class ModBlockModelGen extends BlockStateProvider {
         this.registerBlockModelAndItem(ModBlocks.JUMPY_BLOCK.get());
         this.registerBlockModelAndItem(ModBlocks.ENDSTONE_ZIRCON_ORE.get());
         this.registerBlockModelAndItem(ModBlocks.NETHERRACK_ZIRCON_ORE.get());
+        this.registerBlockModelAndItem(ModBlocks.MY_GENERATOR_BLOCK.get());
         registerProcessor(ModBlocks.ZIRCON_LAMP.get());
         registerCrop(ModBlocks.BLUEBERRY_CROP.get());
     }

@@ -1,10 +1,8 @@
 package net.flandre923.tutorialmod.block;
 
+import com.google.gson.JsonArray;
 import net.flandre923.tutorialmod.TutorialMod;
-import net.flandre923.tutorialmod.block.custom.BlueberryCropBlock;
-import net.flandre923.tutorialmod.block.custom.GemInfusingStationBlock;
-import net.flandre923.tutorialmod.block.custom.JumpyBlock;
-import net.flandre923.tutorialmod.block.custom.ZirconLampBlock;
+import net.flandre923.tutorialmod.block.custom.*;
 import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -65,7 +63,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GEM_INFUSING_STATION = registerBlock("gen_infusing_station",
             () -> new GemInfusingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops().noOcclusion()));
-
+    public static final RegistryObject<Block> MY_GENERATOR_BLOCK = registerBlock("my_generator",
+            () -> new MyGeneratorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

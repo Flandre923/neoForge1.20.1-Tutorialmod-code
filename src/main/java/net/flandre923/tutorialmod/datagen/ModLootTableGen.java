@@ -30,6 +30,7 @@ public class ModLootTableGen extends VanillaBlockLoot  {
         dropSelf(ModBlocks.ZIRCON_BLOCK.get());
         dropSelf(ModBlocks.JUMPY_BLOCK.get());
         dropSelf(ModBlocks.ZIRCON_LAMP.get());
+        dropSelf(ModBlocks.MY_GENERATOR_BLOCK.get());
         add(ModBlocks.ZIRCON_ORE.get(), this::createZirconOreDrops);
         add(ModBlocks.DEEPSLATE_ZIRCON_ORE.get(),this::createZirconOreDrops);
         add(ModBlocks.ENDSTONE_ZIRCON_ORE.get(),this::createZirconOreDrops);

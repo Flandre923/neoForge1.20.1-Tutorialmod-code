@@ -17,7 +17,10 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(GemInfusingStationBlockEntity::new,
                             ModBlocks.GEM_INFUSING_STATION.get()).build(null));
 
-
+    public static final RegistryObject<BlockEntityType<MyGeneratorBlockEntity>> MY_GENERATOR =
+            BLOCK_ENTITIES.register("my_generator", () ->
+                    BlockEntityType.Builder.of(MyGeneratorBlockEntity::new,
+                            ModBlocks.MY_GENERATOR_BLOCK.get()).build(null));
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

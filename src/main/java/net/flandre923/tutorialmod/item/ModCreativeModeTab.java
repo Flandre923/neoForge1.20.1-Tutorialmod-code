@@ -35,6 +35,7 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModBlocks.JUMPY_BLOCK.get());
                         pOutput.accept(ModBlocks.ZIRCON_LAMP.get());
                         pOutput.accept(ModBlocks.GEM_INFUSING_STATION.get());
+                        pOutput.accept(ModBlocks.MY_GENERATOR_BLOCK.get());
                         // 原版
                         pOutput.accept(Items.DIAMOND);
                     })

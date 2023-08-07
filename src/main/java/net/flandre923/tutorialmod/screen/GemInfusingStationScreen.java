@@ -3,6 +3,10 @@ package net.flandre923.tutorialmod.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.flandre923.tutorialmod.TutorialMod;
+import net.flandre923.tutorialmod.screen.renderer.EnergyInfoArea;
+import net.flandre923.tutorialmod.util.MouseUtil;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -10,9 +14,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusingStationMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(TutorialMod.MOD_ID,"textures/gui/gem_infusing_station_gui.png");
+    private EnergyInfoArea energyInfoArea;
 
     public GemInfusingStationScreen(GemInfusingStationMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
@@ -21,8 +29,32 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
     @Override
     protected void init() {
         super.init();
+        assignEnergyInfoArea();
+
+    }
+    private void assignEnergyInfoArea() {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
+        energyInfoArea = new EnergyInfoArea(x + 156, y + 13, menu.blockEntity.getEnergyStorage());
     }
 
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics,int pMouseX, int pMouseY) {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
+        renderEnergyAreaTooltips(guiGraphics, pMouseX, pMouseY, x, y);
+    }
+
+    private void renderEnergyAreaTooltips(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y) {
+        if(isMouseAboveArea(pMouseX, pMouseY, x, y, 156, 13, 8, 64)) {
+//            renderTooltip(guiGraphics, energyInfoArea.getTooltips(),
+//                    Optional.empty(), pMouseX - x, pMouseY - y);
+            guiGraphics.renderTooltip(this.font,energyInfoArea.getTooltips(), Optional.empty(),pMouseX-x,pMouseY-y);
+        }
+    }
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -34,8 +66,12 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
         pGuiGraphics.blit(TEXTURE,x, y, 0, 0, imageWidth, imageHeight);
 
         renderProgressArrow(pGuiGraphics, x, y);
+        energyInfoArea.draw(pGuiGraphics);
     }
 
+    private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {
+        return MouseUtil.isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, width, height);
+    }
 
     private void renderProgressArrow(GuiGraphics pGuiGraphics, int x, int y) {
         if(menu.isCrafting()) {

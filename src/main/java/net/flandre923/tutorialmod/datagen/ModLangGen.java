@@ -37,6 +37,7 @@ public class ModLangGen extends LanguageProvider {
         add(ModBlocks.ENDSTONE_ZIRCON_ORE.get(), "End Zircon Ore");
         add(ModBlocks.NETHERRACK_ZIRCON_ORE.get(), "Nether Zircon Ore");
         add(ModBlocks.GEM_INFUSING_STATION.get(), "Gem Infusing Station");
+        add(ModBlocks.MY_GENERATOR_BLOCK.get(), "My Generator");
         // 村名
         addVillager(ModVillagers.JUMP_MASTER.get(),"Jumpy Master");
         // 按键

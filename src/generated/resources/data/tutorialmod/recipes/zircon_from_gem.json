@@ -1,5 +1,9 @@
 {
   "type": "tutorialmod:gem_infusing",
+  "fluid": {
+    "Amount": 200,
+    "FluidName": "minecraft:water"
+  },
   "ingredients": [
     {
       "item": "tutorialmod:raw_zircon"

@@ -20,5 +20,7 @@
   "key.category.tutorialmod.tutorial": "Tutorial Category",
   "key.tutorialmod.drink_water": "Drinking Water Key",
   "message.tutorialmod.drink_water": "Drinking Water",
-  "message.tutorialmod.no_water": "No water nearby"
+  "message.tutorialmod.no_water": "No water nearby",
+  "tutorialmod.tooltip.liquid.amount": "%s mB",
+  "tutorialmod.tooltip.liquid.amount.with.capacity": "%s / %s mB"
 }

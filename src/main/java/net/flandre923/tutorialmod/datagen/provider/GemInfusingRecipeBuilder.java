@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.machinezoo.noexception.throwing.ThrowingUnaryOperator;
 import net.flandre923.tutorialmod.TutorialMod;
 import net.flandre923.tutorialmod.recipe.GemInfusingStationRecipe;
+import net.flandre923.tutorialmod.util.FluidJSONUtil;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -13,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -64,6 +66,9 @@ public class GemInfusingRecipeBuilder implements RecipeBuilder {
                 ingredients.add(ing.toJson());
             }
             pJson.add("ingredients", ingredients);
+
+            FluidStack fluidStack = new FluidStack(recipe.getFluid(),recipe.getFluid().getAmount());
+            pJson.add("fluid", FluidJSONUtil.toJson(fluidStack));
 
             JsonObject output = new JsonObject();
             ResourceLocation resultItem = BuiltInRegistries.ITEM.getKey(recipe.getResultItem().getItem());

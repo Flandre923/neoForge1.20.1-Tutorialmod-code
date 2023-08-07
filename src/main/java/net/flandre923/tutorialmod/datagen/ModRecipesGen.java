@@ -4,6 +4,8 @@ import com.google.gson.JsonArray;
 import net.flandre923.tutorialmod.TutorialMod;
 import net.flandre923.tutorialmod.block.ModBlocks;
 import net.flandre923.tutorialmod.datagen.provider.GemInfusingRecipeBuilder;
+import net.flandre923.tutorialmod.fluid.ModFluidTypes;
+import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.flandre923.tutorialmod.recipe.GemInfusingStationRecipe;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -19,7 +21,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.fluids.FluidStack;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -52,18 +57,18 @@ public class ModRecipesGen extends RecipeProvider {
         oreSmelting(pWriter, List.of(ModItems.RAW_ZIRCON.get()),RecipeCategory.MISC,ModItems.ZIRCON.get(),0.7f,200,"tutorialmod");
         oreBlasting(pWriter, List.of(ModItems.RAW_ZIRCON.get()),RecipeCategory.MISC,ModItems.ZIRCON.get(),0.7f,100,"tutorialmod");
 
-        gemInfusing(pWriter,ModItems.ZIRCON.get(),ModItems.RAW_ZIRCON.get());
-        gemInfusing(pWriter, Items.DIAMOND,Items.STICK);
+        gemInfusing(pWriter,ModItems.ZIRCON.get(), Fluids.WATER,200,ModItems.RAW_ZIRCON.get());
+        gemInfusing(pWriter, Items.DIAMOND, ModFluids.SOURCE_SOAP_WATER.get(),500,Items.STICK);
     }
 
 
-    public void gemInfusing(Consumer<FinishedRecipe> consumer, Item item,Item ...inputs){
+    public void gemInfusing(Consumer<FinishedRecipe> consumer, Item item, Fluid fluid,int amount,Item ...inputs){
         ItemStack output = new ItemStack(item,1);
 
         NonNullList<Ingredient> inputs_list = NonNullList.withSize(1, Ingredient.EMPTY);
         inputs_list.set(0,Ingredient.of(inputs));
-
-        GemInfusingStationRecipe recipe = new GemInfusingStationRecipe(new ResourceLocation(TutorialMod.MOD_ID,"1"),output,inputs_list);
+        FluidStack stack = new FluidStack(fluid,amount);
+        GemInfusingStationRecipe recipe = new GemInfusingStationRecipe(new ResourceLocation(TutorialMod.MOD_ID,"1"),output,inputs_list,stack);
 
         RecipeBuilder builder = new GemInfusingRecipeBuilder(recipe);
 

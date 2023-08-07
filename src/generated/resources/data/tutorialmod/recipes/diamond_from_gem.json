@@ -1,5 +1,9 @@
 {
   "type": "tutorialmod:gem_infusing",
+  "fluid": {
+    "Amount": 500,
+    "FluidName": "tutorialmod:soap_water_fluid"
+  },
   "ingredients": [
     {
       "item": "minecraft:stick"

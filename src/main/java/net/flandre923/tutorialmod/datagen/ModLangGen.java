@@ -46,7 +46,9 @@ public class ModLangGen extends LanguageProvider {
         // packet
         add(DrinkWaterC2SPacket.MESSAGE_DRINK_WATER,"Drinking Water");
         add(DrinkWaterC2SPacket.MESSAGE_NO_WATER,"No water nearby");
-
+        // 液体渲染
+        add("tutorialmod.tooltip.liquid.amount.with.capacity","%s / %s mB");
+        add("tutorialmod.tooltip.liquid.amount","%s mB");
 
     }
 

@@ -36,10 +36,10 @@ public class DataGenerators {
         ModBlockTagGen blockModelGen = new ModBlockTagGen(output,lookupProvider,event.getExistingFileHelper());
         generator.addProvider(event.includeServer(),blockModelGen);
         generator.addProvider(event.includeServer(),new ModRecipesGen(output));
-        generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModLootTableGen::new, LootContextParamSets.BLOCK))));
         generator.addProvider(event.includeServer(),new ModPoiTypeTagProvider(output,lookupProvider,event.getExistingFileHelper()));
         generator.addProvider(event.includeServer(),new ModPlaceableTagProvider(output,lookupProvider,event.getExistingFileHelper()));
         generator.addProvider(event.includeServer(),new ModWorldGen(output,lookupProvider));
+        generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(),
+                List.of(new LootTableProvider.SubProviderEntry(ModLootTableGen::new, LootContextParamSets.BLOCK))));
     }
 }

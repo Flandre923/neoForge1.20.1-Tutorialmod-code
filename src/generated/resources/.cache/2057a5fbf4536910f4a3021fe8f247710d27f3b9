@@ -1,6 +1,9 @@
-// 1.20.1	2023-08-04T14:40:02.3045655	Item Models: tutorialmod
+// 1.20.1	2023-08-08T13:22:39.600435	Item Models: tutorialmod
 0c7e3ab60d61b4bed399e2ff7e004ecec9be3744 assets/tutorialmod/models/item/blueberry.json
 cdf8dc49fd0f2f2aaeeecd59b8d0e13016458992 assets/tutorialmod/models/item/blueberry_seeds.json
+6f4edd97191c65e927db209a6ee26e3964c935fa assets/tutorialmod/models/item/ebony_sapling.json
 d2ce135d879628c269e5b036ed2b770b49555747 assets/tutorialmod/models/item/eight_ball.json
 27f6a75da25456a21b92aa26617ce3cc6c168570 assets/tutorialmod/models/item/raw_zircon.json
+880b99eb1db4eca3d37e25bf6ecca0d591de9022 assets/tutorialmod/models/item/soap_water_bucket.json
 6590b398aedc23990c7e4056d86426fc6be62dd5 assets/tutorialmod/models/item/zircon.json
+8271a4d5e01116e09fc4c994a351a899344cbae8 assets/tutorialmod/models/item/zircon_pickaxe.json

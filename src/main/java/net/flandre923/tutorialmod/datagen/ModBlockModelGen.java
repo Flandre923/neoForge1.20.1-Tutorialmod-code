@@ -7,6 +7,7 @@ import net.flandre923.tutorialmod.block.custom.ZirconLampBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
@@ -32,6 +33,22 @@ public class ModBlockModelGen extends BlockStateProvider {
         this.registerBlockModelAndItem(ModBlocks.MY_GENERATOR_BLOCK.get());
         registerProcessor(ModBlocks.ZIRCON_LAMP.get());
         registerCrop(ModBlocks.BLUEBERRY_CROP.get());
+
+        logBlock(((RotatedPillarBlock) ModBlocks.EBONY_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.EBONY_WOOD.get(), blockTexture(ModBlocks.EBONY_LOG.get()), blockTexture(ModBlocks.EBONY_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EBONY_LOG.get(), new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
+                new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EBONY_WOOD.get(), new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
+                new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"));
+
+        registerBlockModelAndItem(ModBlocks.EBONY_PLANKS.get());
+        registerBlockModelAndItem(ModBlocks.EBONY_LEAVES.get());
+        saplingBlock(ModBlocks.EBONY_SAPLING.get());
+
+        simpleBlockItem(ModBlocks.EBONY_LOG.get(), models().withExistingParent("tutorialmod:ebony_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.EBONY_WOOD.get(), models().withExistingParent("tutorialmod:ebony_wood", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_EBONY_LOG.get(), models().withExistingParent("tutorialmod:stripped_ebony_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_EBONY_WOOD.get(), models().withExistingParent("tutorialmod:stripped_ebony_wood", "minecraft:block/cube_column"));
     }
 
     public void  registerBlockModelAndItem(Block block){
@@ -55,6 +72,11 @@ public class ModBlockModelGen extends BlockStateProvider {
             variantBuilder.partialState().with(BlueberryCropBlock.AGE,i).modelForState()
                     .modelFile(models().crop(name(block).split("_")[0]+"_stage"+i,cropTextureSuffix(block,"_stage"+i)).renderType("cutout")).addModel();
         }
+    }
+
+    private void saplingBlock(Block block) {
+        simpleBlock(block,
+                models().cross(name(block),blockTexture(block)).renderType("cutout"));
     }
 
     public ResourceLocation blockTexture(Block block) {

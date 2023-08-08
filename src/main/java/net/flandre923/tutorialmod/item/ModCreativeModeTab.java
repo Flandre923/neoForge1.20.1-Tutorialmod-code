@@ -37,6 +37,14 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModBlocks.ZIRCON_LAMP.get());
                         pOutput.accept(ModBlocks.GEM_INFUSING_STATION.get());
                         pOutput.accept(ModBlocks.MY_GENERATOR_BLOCK.get());
+
+                        pOutput.accept(ModBlocks.EBONY_LEAVES.get());
+                        pOutput.accept(ModBlocks.EBONY_LOG.get());
+                        pOutput.accept(ModBlocks.EBONY_WOOD.get());
+                        pOutput.accept(ModBlocks.EBONY_PLANKS.get());
+                        pOutput.accept(ModBlocks.STRIPPED_EBONY_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_EBONY_WOOD.get());
+                        pOutput.accept(ModBlocks.EBONY_SAPLING.get());
                         // 原版
                         pOutput.accept(Items.DIAMOND);
                     })

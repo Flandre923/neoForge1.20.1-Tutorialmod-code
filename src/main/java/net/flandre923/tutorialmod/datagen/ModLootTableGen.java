@@ -31,6 +31,19 @@ public class ModLootTableGen extends VanillaBlockLoot  {
         dropSelf(ModBlocks.JUMPY_BLOCK.get());
         dropSelf(ModBlocks.ZIRCON_LAMP.get());
         dropSelf(ModBlocks.MY_GENERATOR_BLOCK.get());
+        dropSelf(ModBlocks.SOAP_WATER_BLOCK.get());
+        dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
+
+        this.dropSelf(ModBlocks.EBONY_LOG.get());
+        this.dropSelf(ModBlocks.EBONY_WOOD.get());
+        this.dropSelf(ModBlocks.EBONY_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_EBONY_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
+        this.dropSelf(ModBlocks.EBONY_SAPLING.get());
+        this.add(ModBlocks.EBONY_LEAVES.get(), (block) ->
+                createLeavesDrops(block, ModBlocks.EBONY_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+
         add(ModBlocks.ZIRCON_ORE.get(), this::createZirconOreDrops);
         add(ModBlocks.DEEPSLATE_ZIRCON_ORE.get(),this::createZirconOreDrops);
         add(ModBlocks.ENDSTONE_ZIRCON_ORE.get(),this::createZirconOreDrops);

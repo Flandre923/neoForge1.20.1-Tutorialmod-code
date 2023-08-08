@@ -35,6 +35,12 @@ public class ModBlockTagGen extends BlockTagsProvider {
         tag(ModTags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.ZIRCON_BLOCK.get());
 
+        tag(BlockTags.LOGS)
+                .add(ModBlocks.EBONY_LOG.get())
+                .add(ModBlocks.STRIPPED_EBONY_LOG.get())
+                .add(ModBlocks.EBONY_WOOD.get())
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.get());
+
 
 
     }

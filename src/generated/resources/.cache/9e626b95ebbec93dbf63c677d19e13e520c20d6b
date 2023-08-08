@@ -1,3 +1,6 @@
-// 1.20.1	2023-08-04T14:40:02.2986193	Tags for minecraft:block mod id tutorialmod
+// 1.20.1	2023-08-08T13:22:39.5915546	Tags for minecraft:block mod id tutorialmod
+cc6072bd221370460293045cfae1f1987b1ea456 data/forge/tags/blocks/needs_netherite_tool.json
+8ea4ed685aaad3cc7475baa984468e42775a9f96 data/minecraft/tags/blocks/logs.json
 abcc067c70ca706eec4a36d2bc2f0ca8373c375b data/minecraft/tags/blocks/mineable/pickaxe.json
-abcc067c70ca706eec4a36d2bc2f0ca8373c375b data/minecraft/tags/blocks/needs_iron_tool.json
+305db62eb4f8b7db5171e5578212e755835092ee data/minecraft/tags/blocks/needs_iron_tool.json
+091aa441dd1e66712805b7fedc762cd2bb8a7a72 data/tutorialmod/tags/blocks/needs_zircon_tool.json

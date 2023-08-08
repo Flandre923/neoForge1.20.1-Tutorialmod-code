@@ -1,6 +1,7 @@
 package net.flandre923.tutorialmod.datagen;
 
 import net.flandre923.tutorialmod.TutorialMod;
+import net.flandre923.tutorialmod.block.ModBlocks;
 import net.flandre923.tutorialmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +27,12 @@ public class ModItemModelGen extends ItemModelProvider{
         itemGeneratedModel(ModItems.BLUEBERRY.get(),resourceItem(itemName(ModItems.BLUEBERRY.get())));
         itemGeneratedModel(ModItems.SOAP_WATER_BUCKET.get(),resourceItem(itemName(ModItems.SOAP_WATER_BUCKET.get())));
         itemGeneratedModel(ModItems.ZIRCON_PICKAXE.get(),resourceItem(itemName(ModItems.ZIRCON_PICKAXE.get())));
+        itemGeneratedModel(ModBlocks.EBONY_SAPLING.get().asItem(),resourceItem(itemName(ModBlocks.EBONY_SAPLING.get().asItem())));
+    }
+
+    private void saplingItem(Item item,ResourceLocation texture) {
+         withExistingParent(itemName(item),
+                GENERATED).texture("layer0", texture);
     }
 
     public void itemGeneratedModel(Item item, ResourceLocation texture) {

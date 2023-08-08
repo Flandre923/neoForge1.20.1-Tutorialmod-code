@@ -33,6 +33,8 @@ public class ModLootTableGen extends VanillaBlockLoot  {
         dropSelf(ModBlocks.MY_GENERATOR_BLOCK.get());
         dropSelf(ModBlocks.SOAP_WATER_BLOCK.get());
         dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
+        dropSelf(ModBlocks.JASMINE.get());
+        dropSelf(ModBlocks.POTTED_JASMINE.get());
 
         this.dropSelf(ModBlocks.EBONY_LOG.get());
         this.dropSelf(ModBlocks.EBONY_WOOD.get());

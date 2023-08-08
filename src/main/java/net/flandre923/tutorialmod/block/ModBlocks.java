@@ -9,6 +9,7 @@ import net.flandre923.tutorialmod.world.tree.EbonyTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -125,7 +126,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
             () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> JASMINE = registerBlock("jasmine",
+            () -> new FlowerBlock(MobEffects.GLOWING, 5,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
+    public static final RegistryObject<Block> POTTED_JASMINE = BLOCKS.register("potted_jasmine",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.JASMINE,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

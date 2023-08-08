@@ -8,11 +8,10 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.ModelProvider;
-import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
+import net.minecraft.world.level.block.TurtleEggBlock;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
@@ -33,7 +32,8 @@ public class ModBlockModelGen extends BlockStateProvider {
         this.registerBlockModelAndItem(ModBlocks.MY_GENERATOR_BLOCK.get());
         registerProcessor(ModBlocks.ZIRCON_LAMP.get());
         registerCrop(ModBlocks.BLUEBERRY_CROP.get());
-
+        generateJasmineBlockState(ModBlocks.JASMINE.get());
+        generatePottedJasmineBlockState(ModBlocks.POTTED_JASMINE.get());
         logBlock(((RotatedPillarBlock) ModBlocks.EBONY_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.EBONY_WOOD.get(), blockTexture(ModBlocks.EBONY_LOG.get()), blockTexture(ModBlocks.EBONY_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EBONY_LOG.get(), new ResourceLocation(TutorialMod.MOD_ID, "block/stripped_ebony_log"),
@@ -51,9 +51,22 @@ public class ModBlockModelGen extends BlockStateProvider {
         simpleBlockItem(ModBlocks.STRIPPED_EBONY_WOOD.get(), models().withExistingParent("tutorialmod:stripped_ebony_wood", "minecraft:block/cube_column"));
     }
 
+    public void generateJasmineBlockState(Block block) {
+        BlockModelBuilder model = models().cross(name(block), blockTexture(block)).renderType("cutout");
+        simpleBlock(block,model);
+        this.simpleBlockItem(block,model);
+    }
+
+    public void generatePottedJasmineBlockState(Block block) {
+        simpleBlock(block,models().singleTexture(name(block),new ResourceLocation("block/flower_pot_cross"),"plant",new ResourceLocation(TutorialMod.MOD_ID,"block/jasmine")).renderType("cutout"));
+
+    }
+
+
     public void  registerBlockModelAndItem(Block block){
          this.simpleBlockWithItem(block,this.cubeAll(block));
     }
+
 
     private void registerProcessor(Block block){
         ModelFile offModel = models().cubeAll(name(block)+"_off",blockTextureSuffix(block,"_off"));

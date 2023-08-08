@@ -6,6 +6,7 @@ import net.flandre923.tutorialmod.TutorialMod;
 import net.flandre923.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -17,10 +18,7 @@ import net.minecraft.world.level.levelgen.GeodeCrackSettings;
 import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -42,6 +40,7 @@ public class ModConfigureFeature {
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_BLACK_ZIRCON_ORE_KEY = registerKey("nether_black_zircon_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ZIRCON_GEODE_KEY = registerKey("zircon_geode");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JASMINE_KEY = registerKey("jasmine");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -80,6 +79,10 @@ public class ModConfigureFeature {
                 true, UniformInt.of(3, 8),
                 UniformInt.of(2, 6), UniformInt.of(1, 2),
                 -18, 18, 0.075D, 1));
+
+        register(context,JASMINE_KEY,Feature.FLOWER,
+                new RandomPatchConfiguration(32,6,2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.JASMINE.get())))));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -23,6 +23,8 @@ public class ModPlacedFeature {
     public static final ResourceKey<PlacedFeature> NETHER_BLACK_ZIRCON_PLACED_KEY = createKey("nether_black_zircon_placed");
     public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
     public static final ResourceKey<PlacedFeature> ZIRCON_GEODE_PLACED_KEY = createKey("zircon_geode_placed");
+    public static final ResourceKey<PlacedFeature> JASMINE_FLOWER_PLACED_KEY = createKey("jasmine_placed");
+
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -44,6 +46,10 @@ public class ModPlacedFeature {
                 List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
                         BiomeFilter.biome()));
+
+        register(context,JASMINE_FLOWER_PLACED_KEY,configuredFeatures.getOrThrow(ModConfigureFeature.JASMINE_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16),
+                        InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     }
 
     private static ResourceKey<PlacedFeature> createKey(String name) {

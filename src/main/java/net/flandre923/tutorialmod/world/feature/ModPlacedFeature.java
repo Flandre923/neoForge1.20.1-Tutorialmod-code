@@ -12,9 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -24,6 +22,8 @@ public class ModPlacedFeature {
     public static final ResourceKey<PlacedFeature> END_BLACK_ZIRCON_PLACED_KEY = createKey("end_black_zircon_placed");
     public static final ResourceKey<PlacedFeature> NETHER_BLACK_ZIRCON_PLACED_KEY = createKey("nether_black_zircon_placed");
     public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
+    public static final ResourceKey<PlacedFeature> ZIRCON_GEODE_PLACED_KEY = createKey("zircon_geode_placed");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -39,6 +39,11 @@ public class ModPlacedFeature {
 
         register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfigureFeature.EBONY_KEY),
                         VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.EBONY_SAPLING.get()));
+
+        register(context,ZIRCON_GEODE_PLACED_KEY,configuredFeatures.getOrThrow(ModConfigureFeature.ZIRCON_GEODE_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                        BiomeFilter.biome()));
     }
 
     private static ResourceKey<PlacedFeature> createKey(String name) {

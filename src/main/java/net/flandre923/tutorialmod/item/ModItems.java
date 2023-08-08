@@ -39,6 +39,9 @@ public class ModItems {
                     new Item.Properties().stacksTo(1)));
 
 
+    public static final RegistryObject<Item> ZIRCON_PICKAXE = ITEMS.register("zircon_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.ZIRCON, 2, 3f,
+                    new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

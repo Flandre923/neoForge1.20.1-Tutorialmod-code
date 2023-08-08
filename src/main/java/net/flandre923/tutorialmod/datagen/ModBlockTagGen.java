@@ -2,6 +2,7 @@ package net.flandre923.tutorialmod.datagen;
 
 import net.flandre923.tutorialmod.TutorialMod;
 import net.flandre923.tutorialmod.block.ModBlocks;
+import net.flandre923.tutorialmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -26,9 +27,13 @@ public class ModBlockTagGen extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_ZIRCON_ORE.get());
         // 需要铁工具以上
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.ZIRCON_BLOCK.get())
-                .add(ModBlocks.ZIRCON_ORE.get())
+                .add(ModBlocks.ZIRCON_ORE.get());
+        // zircon 等级工具
+        tag(ModTags.Blocks.NEEDS_ZIRCON_TOOL)
                 .add(ModBlocks.DEEPSLATE_ZIRCON_ORE.get());
+        // 下届合金
+        tag(ModTags.Blocks.NEEDS_NETHERITE_TOOL)
+                .add(ModBlocks.ZIRCON_BLOCK.get());
 
 
 

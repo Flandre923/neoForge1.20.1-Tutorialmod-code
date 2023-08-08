@@ -28,6 +28,7 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModItems.BLUEBERRY.get());
                         pOutput.accept(ModItems.SOAP_WATER_BUCKET.get());
                         pOutput.accept(ModItems.TUTORIAL_SWORD.get());
+                        pOutput.accept(ModItems.ZIRCON_PICKAXE.get());
                         //方块
                         pOutput.accept(ModBlocks.ZIRCON_BLOCK.get());
                         pOutput.accept(ModBlocks.ZIRCON_ORE.get());

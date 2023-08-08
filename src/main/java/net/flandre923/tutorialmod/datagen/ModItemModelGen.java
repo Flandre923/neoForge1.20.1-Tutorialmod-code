@@ -25,6 +25,7 @@ public class ModItemModelGen extends ItemModelProvider{
         itemGeneratedModel(ModItems.BLUEBERRY_SEEDS.get(),resourceItem(itemName(ModItems.BLUEBERRY_SEEDS.get())));
         itemGeneratedModel(ModItems.BLUEBERRY.get(),resourceItem(itemName(ModItems.BLUEBERRY.get())));
         itemGeneratedModel(ModItems.SOAP_WATER_BUCKET.get(),resourceItem(itemName(ModItems.SOAP_WATER_BUCKET.get())));
+        itemGeneratedModel(ModItems.ZIRCON_PICKAXE.get(),resourceItem(itemName(ModItems.ZIRCON_PICKAXE.get())));
     }
 
     public void itemGeneratedModel(Item item, ResourceLocation texture) {

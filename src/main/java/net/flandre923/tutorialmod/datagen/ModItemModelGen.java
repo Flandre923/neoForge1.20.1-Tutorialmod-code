@@ -13,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModItemModelGen extends ItemModelProvider{
     public static final String GENERATED = "item/generated";
     public static final String HANDHELD = "item/handheld";
+    public static final String EGG_TEMPLATE = "item/template_spawn_egg";
 
     public ModItemModelGen(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, TutorialMod.MOD_ID, existingFileHelper);
@@ -28,11 +29,17 @@ public class ModItemModelGen extends ItemModelProvider{
         itemGeneratedModel(ModItems.SOAP_WATER_BUCKET.get(),resourceItem(itemName(ModItems.SOAP_WATER_BUCKET.get())));
         itemGeneratedModel(ModItems.ZIRCON_PICKAXE.get(),resourceItem(itemName(ModItems.ZIRCON_PICKAXE.get())));
         itemGeneratedModel(ModBlocks.EBONY_SAPLING.get().asItem(),resourceItem(itemName(ModBlocks.EBONY_SAPLING.get().asItem())));
+
+        eggItem(ModItems.CHOMPER_SPAWN_EGG.get());
     }
 
     private void saplingItem(Item item,ResourceLocation texture) {
          withExistingParent(itemName(item),
                 GENERATED).texture("layer0", texture);
+    }
+    private void eggItem(Item item) {
+        withExistingParent(itemName(item),
+                EGG_TEMPLATE);
     }
 
     public void itemGeneratedModel(Item item, ResourceLocation texture) {

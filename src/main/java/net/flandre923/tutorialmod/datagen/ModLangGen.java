@@ -29,6 +29,7 @@ public class ModLangGen extends LanguageProvider {
         add(ModItems.SOAP_WATER_BUCKET.get(),"Soap Water Bucket");
         add(ModItems.TUTORIAL_SWORD.get(),"Tutorial Mod Sword");
         add(ModItems.ZIRCON_PICKAXE.get(),"Zircon Pickaxe");
+        add(ModItems.CHOMPER_SPAWN_EGG.get(),"Chomper Egg");
         add(ModCreativeModeTab.TUTORIAL_TAB_STRING,"TutorialMod Tab");
         //方块
         add(ModBlocks.ZIRCON_BLOCK.get(),"Zircon Block");

@@ -7,6 +7,7 @@ import net.flandre923.tutorialmod.fluid.ModFluidTypes;
 import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.ModCreativeModeTab;
 import net.flandre923.tutorialmod.item.ModItems;
+import net.flandre923.tutorialmod.loot.ModLootModifiers;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.painting.ModPaintings;
 import net.flandre923.tutorialmod.recipe.ModRecipes;
@@ -60,6 +61,8 @@ public class TutorialMod
         ModMenuTypes.register(modEventBus);
         //recipes
         ModRecipes.register(modEventBus);
+        // loot table
+        ModLootModifiers.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }

@@ -6,6 +6,7 @@ import net.flandre923.tutorialmod.block.ModBlocks;
 import net.flandre923.tutorialmod.entity.ModEntityTypes;
 import net.flandre923.tutorialmod.fluid.ModFluids;
 import net.flandre923.tutorialmod.item.custom.EightBallItem;
+import net.flandre923.tutorialmod.item.custom.TeleportationItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -31,7 +32,10 @@ public class ModItems {
     public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry",
             () -> new Item(new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
-
+    // 添加流体捅
+    // new 的流体同的类
+    // 其中的craftRemadier指出桶
+    // stacksto是最大的堆叠数目。
     public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket",
             () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER,
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
@@ -48,6 +52,9 @@ public class ModItems {
     public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341, 0x19732e,
                     new Item.Properties()));
+
+    public static final RegistryObject<Item> TELEPORTATION_ITEM = ITEMS.register("teleportation_item",
+            () -> new TeleportationItem(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

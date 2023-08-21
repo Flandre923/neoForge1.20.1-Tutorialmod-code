@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ModToolTiers {
     public static Tier ZIRCON;
+
     static {
         ZIRCON = TierSortingRegistry.registerTier(
                 new ForgeTier(5, 2000, 9f, 3f, 24,

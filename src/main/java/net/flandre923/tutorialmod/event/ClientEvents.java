@@ -6,7 +6,10 @@ import net.flandre923.tutorialmod.block.entity.renderer.GemInfusingStationBlockE
 import net.flandre923.tutorialmod.client.ThirstHudOverlay;
 import net.flandre923.tutorialmod.networking.ModMessages;
 import net.flandre923.tutorialmod.networking.packet.DrinkWaterC2SPacket;
+import net.flandre923.tutorialmod.networking.packet.ExampleC2SPacket;
 import net.flandre923.tutorialmod.util.KeyBinding;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.InputEvent;
@@ -35,6 +38,7 @@ public class ClientEvents {
             event.register(KeyBinding.DRINKING_KEY);
         }
 
+        // 在这个事件下注册我们的gui
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
             event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);

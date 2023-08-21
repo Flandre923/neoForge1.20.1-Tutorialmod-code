@@ -68,8 +68,6 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
 
     private void renderEnergyAreaTooltips(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y) {
         if(isMouseAboveArea(pMouseX, pMouseY, x, y, 156, 13, 8, 64)) {
-//            renderTooltip(guiGraphics, energyInfoArea.getTooltips(),
-//                    Optional.empty(), pMouseX - x, pMouseY - y);
             guiGraphics.renderTooltip(this.font,energyInfoArea.getTooltips(), Optional.empty(),pMouseX-x,pMouseY-y);
         }
     }

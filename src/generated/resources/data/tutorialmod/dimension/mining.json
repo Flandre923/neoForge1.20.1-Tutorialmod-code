@@ -1,0 +1,11 @@
+{
+  "type": "tutorialmod:mining",
+  "generator": {
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "tutorialmod:mining"
+    },
+    "settings": "tutorialmod:mining",
+    "type": "minecraft:noise"
+  }
+}

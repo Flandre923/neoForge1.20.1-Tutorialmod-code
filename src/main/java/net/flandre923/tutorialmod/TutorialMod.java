@@ -41,7 +41,7 @@ import software.bernie.geckolib.GeckoLib;
 public class TutorialMod
 {
     public static final String MOD_ID = "tutorialmod";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod()
     {
@@ -98,6 +98,7 @@ public class TutorialMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            // 这是指出我们添加的是流体需要进行半透明的渲染。
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(),RenderType.translucent());
             // scrren

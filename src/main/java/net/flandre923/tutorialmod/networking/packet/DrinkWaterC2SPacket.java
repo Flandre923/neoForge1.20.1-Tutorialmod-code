@@ -47,6 +47,7 @@ public class DrinkWaterC2SPacket {
                     thirst.addThirst(1);
                     player.sendSystemMessage(Component.literal("Current Thirst " + thirst.getThirst())
                             .withStyle(ChatFormatting.AQUA));
+                    // 当增加饥渴值时候同步数据。
                     ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()),player);
                 });
 
@@ -56,6 +57,7 @@ public class DrinkWaterC2SPacket {
                 player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
                     player.sendSystemMessage(Component.literal("Current Thirst " + thirst.getThirst())
                             .withStyle(ChatFormatting.AQUA));
+                    // 添加这个代码，当玩家按下o建的时候同步数据
                     ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()),player);
                 });
             }

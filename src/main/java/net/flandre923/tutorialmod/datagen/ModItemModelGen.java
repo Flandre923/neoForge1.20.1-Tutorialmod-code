@@ -26,6 +26,7 @@ public class ModItemModelGen extends ItemModelProvider{
         itemGeneratedModel(ModItems.EIGHT_BALL.get(),resourceItem(itemName(ModItems.EIGHT_BALL.get())));
         itemGeneratedModel(ModItems.BLUEBERRY_SEEDS.get(),resourceItem(itemName(ModItems.BLUEBERRY_SEEDS.get())));
         itemGeneratedModel(ModItems.BLUEBERRY.get(),resourceItem(itemName(ModItems.BLUEBERRY.get())));
+        // 添加流体捅
         itemGeneratedModel(ModItems.SOAP_WATER_BUCKET.get(),resourceItem(itemName(ModItems.SOAP_WATER_BUCKET.get())));
         itemGeneratedModel(ModItems.ZIRCON_PICKAXE.get(),resourceItem(itemName(ModItems.ZIRCON_PICKAXE.get())));
         itemGeneratedModel(ModBlocks.EBONY_SAPLING.get().asItem(),resourceItem(itemName(ModBlocks.EBONY_SAPLING.get().asItem())));

@@ -29,6 +29,7 @@ public class EnergyInfoArea extends InfoArea {
         return List.of(Component.literal(energy.getEnergyStored()+"/"+energy.getMaxEnergyStored()+" FE"));
     }
 
+    //ARGB
     @Override
     public void draw(GuiGraphics guiGraphics) {
         final int height = area.getHeight();

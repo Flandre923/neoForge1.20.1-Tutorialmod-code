@@ -30,6 +30,7 @@ public class ModCreativeModeTab {
                         pOutput.accept(ModItems.TUTORIAL_SWORD.get());
                         pOutput.accept(ModItems.ZIRCON_PICKAXE.get());
                         pOutput.accept(ModItems.EIGHT_BALL.get());
+                        pOutput.accept(ModItems.TELEPORTATION_ITEM.get());
                         //方块
                         pOutput.accept(ModBlocks.ZIRCON_BLOCK.get());
                         pOutput.accept(ModBlocks.ZIRCON_ORE.get());

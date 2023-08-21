@@ -13,7 +13,6 @@ public abstract class ModEnergyStorage extends EnergyStorage {
         if(extractedEnergy != 0) {
             onEnergyChanged();
         }
-
         return extractedEnergy;
     }
 

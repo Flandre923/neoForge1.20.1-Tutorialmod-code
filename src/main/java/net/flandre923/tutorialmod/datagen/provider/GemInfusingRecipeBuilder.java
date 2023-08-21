@@ -26,8 +26,6 @@ public class GemInfusingRecipeBuilder implements RecipeBuilder {
         this.recipe = recipe;
     }
 
-
-
     @Override
     public RecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
         return null;

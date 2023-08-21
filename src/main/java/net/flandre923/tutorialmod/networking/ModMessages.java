@@ -38,7 +38,7 @@ public class ModMessages {
                 .encoder(DrinkWaterC2SPacket::toBytes)
                 .consumerMainThread(DrinkWaterC2SPacket::handle)
                 .add();
-
+        // 注册这个数据包
         net.messageBuilder(ThirstDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ThirstDataSyncS2CPacket::new)
                 .encoder(ThirstDataSyncS2CPacket::toBytes)
